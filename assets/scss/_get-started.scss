@@ -1,0 +1,79 @@
+#getStarted {
+	@media (max-width: $fablet) {
+			text-align: center;
+		}
+	h3 {
+		@include headlineDecoration($sophosi-yellow);
+		@media (max-width: $fablet) {
+			text-align: center;
+		}
+		&:after {
+			right: unset;
+			@media (max-width: $fablet) {
+			right: 0;
+		}
+		}
+		text-align: left;
+		margin-bottom: 40px;
+	}
+	.section-padding  {
+		@include clear();
+	}
+	.left {
+		float: left;
+		width: 45%;
+		@media (max-width: $fablet) { width: 100%; }
+	}
+	.right {
+		float: right;
+		width: 54%;
+		@media (max-width: $fablet) { width: 100%; }
+		margin-right: -10px;
+		margin-top: -60px;
+		@media (max-width: $fablet) { margin: 0px auto 30px; }
+		img {
+			max-width: 110%;
+			@media (max-width: $fablet) { max-width: 100%; }
+
+		}
+	}
+	[class^="step-"] {
+		@include clear();
+		font-family: $headline-font;
+
+		span {
+			font-family: $headline-font;
+			font-weight: 100;
+			color: $sophosi-red;
+			font-size: 80px;
+			display: block;
+			@media (max-width: $small-desktop) { font-size: 50px; }
+			float: left;
+			width: 50px;
+			height: 100px;
+			text-align: center;
+			margin-right: 30px;
+			@media (max-width: $small-desktop) { margin-right: 10px;}
+			@media (max-width: $fablet) {
+				width: 100%;
+				display: block;
+				height: unset;
+				&:not(:first-of-type) {
+					margin-top: 20px;
+				}
+			}
+		}
+		p {
+			padding-top: 22px;
+			@media (max-width: $small-desktop) { padding-top: 15px; }
+			@media (max-width: $tablet) { font-size: 16px; }
+			font-size: 24px;
+			@media (max-width: $small-desktop) { font-size: 18px; }
+			@media (max-width: $tablet) { font-size: 14px; }
+		}
+	}
+	.button {
+		 @include button();
+		 margin-top: 60px;
+	}
+}

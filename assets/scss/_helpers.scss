@@ -1,0 +1,42 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@mixin clear() {
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+		float: none;
+	}
+}
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin justify-content($arg) {
+	-webkit-box-pack: $arg;
+	-ms-flex-pack: $arg;
+	-webkit-justify-content: $arg;
+	-moz-justify-content: $arg;
+	justify-content: $arg;
+}
+
+@mixin flex-direction($arg) {
+	-webkit-flex-direction: $arg;
+	-moz-flex-direction: $arg;
+	-ms-flex-direction: $arg;
+	flex-direction: $arg;
+}

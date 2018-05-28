@@ -1,0 +1,52 @@
+#qualifications {
+	background: url(../../img/chalkboard-bg.jpg) center center no-repeat;
+	background-size: cover;
+	color: $white;
+	text-align: center;
+
+	h3 {
+		@include headlineDecoration($sophosi-yellow);
+	}
+	.list-wrapper {
+		@include flexbox();
+		@include justify-content(space-between);
+		flex-wrap: wrap;
+		flex-direction: row;
+		max-width: 880px;
+		margin: 50px auto;
+		ul {
+			margin-left: 40px;
+			@media (max-width: $tablet) { width: 40%; }
+			@media (max-width: $fablet) { 
+				width: 80%; 
+				margin: 0 auto; 
+			}
+			li {
+				list-style: none;
+				position: relative;
+				font-family: $headline-font;
+				padding: 7px 0;
+				font-size: 15px;
+				text-align: left;
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					background: green;
+					left: -30px;
+					background: url(../../img/checkmark-bullet.png) center center no-repeat;
+					background: url(../../img/checkmark-bullet.svg) center center no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
+	.button {
+		@include button(14px);
+		margin: 0 auto;
+	}
+
+}

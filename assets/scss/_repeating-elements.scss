@@ -1,0 +1,48 @@
+@mixin button($font-size: 14px, $background: $sophosi-yellow ) {
+	padding: 15px 15px 12px;
+	font-size: $font-size;
+	font-family: $headline-font;
+	font-weight: 600;
+	background: $background;
+	text-transform: uppercase;
+	display: inline-block;
+	color: $black;
+	min-width: 250px;
+	text-align: center;
+	@if $background == $sophosi-blue {
+  		color: $white;
+	} 
+	@else {
+    	color: $black;
+	}
+	&:hover {
+		@media (min-width: $tablet) {
+			transition: background 0.2s ease-in-out;
+			background: darken($background, 10%);
+		}
+	}
+}
+
+@mixin underlineHover() {
+	&:hover {
+		@media (min-width: $tablet) {
+			text-decoration: underline;
+		}
+	}
+}
+
+@mixin headlineDecoration($color: $sophosi-red) {
+	position: relative;
+	padding-top: 40px;
+	&:after {
+		position: absolute;
+		content: '';
+		top: 0px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 78px;
+		height: 4px;
+		background: $color;
+	}
+}

@@ -1,0 +1,103 @@
+form {
+
+	select {
+		display: none;
+	}
+
+	input, .select-styled > div {
+		padding: 10px;
+		width: 350px;
+		@media (max-width: $fablet) { width: 200px;}
+		margin: 5px;
+		@media (max-width: $fablet) { margin: 2px 0; }
+		font-size: 14px;
+		background: $white;
+		border: none;
+		color: $black;
+	}
+
+	input#checkbox {
+		width: unset;
+		margin-top: 14px;
+		+ label {
+			font-size: 14px;
+			a {
+				color: $sophosi-yellow;
+				font-weight: unset;
+				font-size: 14px;
+				font-family: $body-font;
+				@include underlineHover();
+			}
+		}
+	}
+
+	button {
+		@include button(22px);
+	}
+	.select-styled {
+		position: relative;
+		display: inline-block;
+		> div {
+			position: relative;
+			text-align: left;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 18px;
+				right: 20px;
+				width: 0; 
+				height: 0; 
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 5px solid $black;
+				transition: transform 0.1s ease;
+			}
+			&.active {
+				&:after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+		ul {
+			@include clear();
+			background: $white;
+			opacity: 0;
+			height: 0px;
+			pointer-events: none;
+			transition: all .2s ease;
+			box-shadow: 1px 1px 8px rgba($black, 0.3);
+			position: absolute;
+			width: 370px;
+			@media (max-width: $fablet) { 
+				width: 220px; 
+				left: 0;
+			}
+			left: 5px;
+			border-radius: 2px;
+			overflow: hidden;
+
+			&.active {
+				opacity: 1;
+				height: initial;
+				pointer-events: all;
+			}
+			li {
+					background: $white;
+					overflow: hidden;
+					padding: 15px;
+					color: $black;
+					font-size: 14px;
+					transition: background .2s ease;
+					cursor: pointer;
+					&:nth-child(odd) {
+						background: $light-grey;
+					}
+					&:hover {
+						@media (min-width: $tablet) {
+							background: $sophosi-yellow;
+						}
+					}
+				}
+		}
+	}
+}

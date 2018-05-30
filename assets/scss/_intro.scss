@@ -72,9 +72,11 @@
 			z-index: 10;
 			right: 0;
 			left: 0;
+			width: 100%;
 			bottom: -25px;
 			margin: 0 auto;
-			padding: 0 50px;
+			box-sizing: border-box;
+			padding: 0 10px;
 			@media all and (max-width: $fablet) { padding: 80px 40px 0; }
 			max-width: 1024px;
 			color: $white;
@@ -113,6 +115,7 @@
 	@include justify-content(space-between);
 	figure {
 		width: 50%;
+		float: left;
 		margin: 0 10px 0 0;
 		@media (max-width: $fablet) { 
 			margin: 0 auto;
@@ -125,9 +128,10 @@
 		}
 	}
 	div {
-		width: 50%;
+		width: 48%;
+		float: right;
 		background: $light-grey;
-		margin: 0 0 0 10px;
+		margin: 0;
 		align-items: center;
 		@include flexbox();
 		@media (max-width: $fablet) { 

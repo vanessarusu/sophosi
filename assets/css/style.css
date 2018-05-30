@@ -56,6 +56,9 @@ table {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
+.hidden {
+  display: none; }
+
 .yellow {
   color: #fcb315; }
 
@@ -157,7 +160,10 @@ h4 {
   font-weight: bold; }
 
 form select {
-  display: none; }
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  position: absolute; }
 
 form input, form .select-styled > div {
   padding: 10px;
@@ -175,8 +181,10 @@ form input, form .select-styled > div {
       margin: 2px 0; } }
 
 form input#checkbox {
-  width: unset;
-  margin-top: 14px; }
+  width: auto;
+  margin-top: 14px;
+  background: none;
+  padding: 0; }
   form input#checkbox + label {
     font-size: 14px; }
     form input#checkbox + label a {
@@ -188,7 +196,7 @@ form input#checkbox {
         form input#checkbox + label a:hover {
           text-decoration: underline; } }
 
-form button {
+form button, form .button {
   padding: 15px 15px 12px;
   font-size: 22px;
   font-family: "Poppins", Helvetica, sans-serif;
@@ -199,11 +207,20 @@ form button {
   color: #1d1e26;
   min-width: 250px;
   text-align: center;
-  color: #1d1e26; }
+  color: #1d1e26;
+  margin-top: 10px; }
   @media (min-width: 768px) {
-    form button:hover {
+    form button:hover, form .button:hover {
       transition: background 0.2s ease-in-out;
       background: #db9703; } }
+  form button:disabled, form button [disabled], form .button:disabled, form .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    form button:disabled:hover, form button [disabled]:hover, form .button:disabled:hover, form .button [disabled]:hover {
+      background: #f0f0f0; }
+  form button#submit, form .button#submit {
+    font-size: 14px; }
 
 form .select-styled {
   position: relative;
@@ -263,6 +280,56 @@ form .select-styled {
         form .select-styled ul li:hover {
           background: #fcb315; } }
 
+#popup {
+  display: none; }
+  #popup.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 30, 38, 0.4);
+    color: #1d1e26; }
+  #popup .lightbox-container {
+    width: 70%;
+    max-width: 500px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px; }
+    @media (max-width: 768px) {
+      #popup .lightbox-container {
+        padding: 20px; } }
+    #popup .lightbox-container input {
+      border: 2px solid #f0f0f0;
+      display: block;
+      margin: 20px auto; }
+    #popup .lightbox-container .close-lightbox {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #e63f43;
+      border-radius: 50%;
+      top: -15px;
+      right: -15px;
+      font-family: "Poppins", Helvetica, sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 18px;
+      line-height: 28px;
+      cursor: pointer;
+      transition: background 0.2s ease; }
+      @media (min-width: 768px) {
+        #popup .lightbox-container .close-lightbox:hover {
+          background: #fcb315; } }
+
+.g-recaptcha > div {
+  margin: 10px auto; }
+
 #intro header:after {
   clear: both;
   display: block;
@@ -310,6 +377,12 @@ form .select-styled {
     #intro header .button:hover {
       transition: background 0.2s ease-in-out;
       background: #0049a0; } }
+  #intro header .button:disabled, #intro header .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    #intro header .button:disabled:hover, #intro header .button [disabled]:hover {
+      background: #f0f0f0; }
   @media (max-width: 600px) {
     #intro header .button {
       margin-bottom: 20px; } }
@@ -354,9 +427,11 @@ form .select-styled {
     z-index: 10;
     right: 0;
     left: 0;
+    width: 100%;
     bottom: -25px;
     margin: 0 auto;
-    padding: 0 50px;
+    box-sizing: border-box;
+    padding: 0 10px;
     max-width: 1024px;
     color: #fff; }
     @media all and (max-width: 600px) {
@@ -425,6 +500,7 @@ form .select-styled {
       display: block; } }
   .alternate-offering figure {
     width: 50%;
+    float: left;
     margin: 0 10px 0 0; }
     @media (max-width: 600px) {
       .alternate-offering figure {
@@ -435,9 +511,10 @@ form .select-styled {
       height: 100%;
       object-fit: cover; }
   .alternate-offering div {
-    width: 50%;
+    width: 48%;
+    float: right;
     background: #f0f0f0;
-    margin: 0 0 0 10px;
+    margin: 0;
     align-items: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -472,6 +549,12 @@ form .select-styled {
           .alternate-offering div div .button:hover {
             transition: background 0.2s ease-in-out;
             background: #0049a0; } }
+        .alternate-offering div div .button:disabled, .alternate-offering div div .button [disabled] {
+          background: #f0f0f0;
+          color: #777b98;
+          cursor: auto; }
+          .alternate-offering div div .button:disabled:hover, .alternate-offering div div .button [disabled]:hover {
+            background: #f0f0f0; }
 
 #qualifications {
   background: url(../../img/chalkboard-bg.jpg) center center no-repeat;
@@ -492,6 +575,7 @@ form .select-styled {
       height: 4px;
       background: #fcb315; }
   #qualifications .list-wrapper {
+    display: table;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -550,17 +634,23 @@ form .select-styled {
       #qualifications .button:hover {
         transition: background 0.2s ease-in-out;
         background: #db9703; } }
+    #qualifications .button:disabled, #qualifications .button [disabled] {
+      background: #f0f0f0;
+      color: #777b98;
+      cursor: auto; }
+      #qualifications .button:disabled:hover, #qualifications .button [disabled]:hover {
+        background: #f0f0f0; }
 
 @media (max-width: 600px) {
-  #getStarted {
+  #getStartedPanel {
     text-align: center; } }
 
-#getStarted h3 {
+#getStartedPanel h3 {
   position: relative;
   padding-top: 40px;
   text-align: left;
   margin-bottom: 40px; }
-  #getStarted h3:after {
+  #getStartedPanel h3:after {
     position: absolute;
     content: '';
     top: 0px;
@@ -571,52 +661,52 @@ form .select-styled {
     height: 4px;
     background: #fcb315; }
   @media (max-width: 600px) {
-    #getStarted h3 {
+    #getStartedPanel h3 {
       text-align: center; } }
-  #getStarted h3:after {
+  #getStartedPanel h3:after {
     right: unset; }
     @media (max-width: 600px) {
-      #getStarted h3:after {
+      #getStartedPanel h3:after {
         right: 0; } }
 
-#getStarted .section-padding:after {
+#getStartedPanel .section-padding:after {
   clear: both;
   display: block;
   content: '';
   float: none; }
 
-#getStarted .left {
+#getStartedPanel .left {
   float: left;
   width: 45%; }
   @media (max-width: 600px) {
-    #getStarted .left {
+    #getStartedPanel .left {
       width: 100%; } }
 
-#getStarted .right {
+#getStartedPanel .right {
   float: right;
   width: 54%;
   margin-right: -10px;
   margin-top: -60px; }
   @media (max-width: 600px) {
-    #getStarted .right {
+    #getStartedPanel .right {
       width: 100%; } }
   @media (max-width: 600px) {
-    #getStarted .right {
+    #getStartedPanel .right {
       margin: 0px auto 30px; } }
-  #getStarted .right img {
+  #getStartedPanel .right img {
     max-width: 110%; }
     @media (max-width: 600px) {
-      #getStarted .right img {
+      #getStartedPanel .right img {
         max-width: 100%; } }
 
-#getStarted [class^="step-"] {
+#getStartedPanel [class^="step-"] {
   font-family: "Poppins", Helvetica, sans-serif; }
-  #getStarted [class^="step-"]:after {
+  #getStartedPanel [class^="step-"]:after {
     clear: both;
     display: block;
     content: '';
     float: none; }
-  #getStarted [class^="step-"] span {
+  #getStartedPanel [class^="step-"] span {
     font-family: "Poppins", Helvetica, sans-serif;
     font-weight: 100;
     color: #e63f43;
@@ -628,35 +718,35 @@ form .select-styled {
     text-align: center;
     margin-right: 30px; }
     @media (max-width: 1024px) {
-      #getStarted [class^="step-"] span {
+      #getStartedPanel [class^="step-"] span {
         font-size: 50px; } }
     @media (max-width: 1024px) {
-      #getStarted [class^="step-"] span {
+      #getStartedPanel [class^="step-"] span {
         margin-right: 10px; } }
     @media (max-width: 600px) {
-      #getStarted [class^="step-"] span {
+      #getStartedPanel [class^="step-"] span {
         width: 100%;
         display: block;
         height: unset; }
-        #getStarted [class^="step-"] span:not(:first-of-type) {
+        #getStartedPanel [class^="step-"] span:not(:first-of-type) {
           margin-top: 20px; } }
-  #getStarted [class^="step-"] p {
+  #getStartedPanel [class^="step-"] p {
     padding-top: 22px;
     font-size: 24px; }
     @media (max-width: 1024px) {
-      #getStarted [class^="step-"] p {
+      #getStartedPanel [class^="step-"] p {
         padding-top: 15px; } }
     @media (max-width: 768px) {
-      #getStarted [class^="step-"] p {
+      #getStartedPanel [class^="step-"] p {
         font-size: 16px; } }
     @media (max-width: 1024px) {
-      #getStarted [class^="step-"] p {
+      #getStartedPanel [class^="step-"] p {
         font-size: 18px; } }
     @media (max-width: 768px) {
-      #getStarted [class^="step-"] p {
+      #getStartedPanel [class^="step-"] p {
         font-size: 14px; } }
 
-#getStarted .button {
+#getStartedPanel .button {
   padding: 15px 15px 12px;
   font-size: 14px;
   font-family: "Poppins", Helvetica, sans-serif;
@@ -670,9 +760,15 @@ form .select-styled {
   color: #1d1e26;
   margin-top: 60px; }
   @media (min-width: 768px) {
-    #getStarted .button:hover {
+    #getStartedPanel .button:hover {
       transition: background 0.2s ease-in-out;
       background: #db9703; } }
+  #getStartedPanel .button:disabled, #getStartedPanel .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    #getStartedPanel .button:disabled:hover, #getStartedPanel .button [disabled]:hover {
+      background: #f0f0f0; }
 
 footer.wrapper {
   background: #1d1e26;

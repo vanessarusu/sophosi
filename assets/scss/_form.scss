@@ -1,7 +1,10 @@
 form {
 
 	select {
-		display: none;
+		opacity: 0;
+		width: 0px;
+		height: 0px;
+		position: absolute;
 	}
 
 	input, .select-styled > div {
@@ -17,8 +20,11 @@ form {
 	}
 
 	input#checkbox {
-		width: unset;
+		width: auto;
 		margin-top: 14px;
+		// ie specific:
+		background: none;
+		padding: 0;
 		+ label {
 			font-size: 14px;
 			a {
@@ -31,8 +37,12 @@ form {
 		}
 	}
 
-	button {
+	button, .button {
 		@include button(22px);
+		margin-top: 10px;
+		&#submit {
+			font-size: 14px;
+		}
 	}
 	.select-styled {
 		position: relative;
@@ -82,22 +92,81 @@ form {
 				pointer-events: all;
 			}
 			li {
-					background: $white;
-					overflow: hidden;
-					padding: 15px;
-					color: $black;
-					font-size: 14px;
-					transition: background .2s ease;
-					cursor: pointer;
-					&:nth-child(odd) {
-						background: $light-grey;
-					}
-					&:hover {
-						@media (min-width: $tablet) {
-							background: $sophosi-yellow;
-						}
+				background: $white;
+				overflow: hidden;
+				padding: 15px;
+				color: $black;
+				font-size: 14px;
+				transition: background .2s ease;
+				cursor: pointer;
+				&:nth-child(odd) {
+					background: $light-grey;
+				}
+				&:hover {
+					@media (min-width: $tablet) {
+						background: $sophosi-yellow;
 					}
 				}
+			}
 		}
 	}
+}
+
+#popup {
+	display: none;
+	&.active {
+		display: block;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba($black, 0.4);
+		color: $black;
+	}
+	.lightbox-container {
+		width: 70%;
+		max-width: 500px; 
+		position: absolute;
+		top: 200px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		background: $white;
+		padding: 50px;
+		@media (max-width: $tablet) { 
+			padding: 20px; 
+		}
+
+		input {
+			border: 2px solid $light-grey;
+			display: block;
+			margin: 20px auto;
+		}
+		.close-lightbox {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background: $sophosi-red;
+			border-radius: 50%;
+			top: -15px;
+			right: -15px;
+			font-family: $headline-font;
+			font-weight: 700;
+			color: $white;
+			font-size: 18px;
+			line-height: 28px;
+			cursor: pointer;
+			transition: background 0.2s ease;
+			&:hover {
+				@media (min-width: $tablet) {
+					background: $sophosi-yellow;
+				}
+			}
+		}
+	}
+}
+
+.g-recaptcha > div {
+	margin: 10px auto;
 }

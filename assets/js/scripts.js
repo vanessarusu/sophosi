@@ -1,4 +1,13 @@
+// recaptcha callback in global scope
+
+var enableBtn = function() {
+	document.querySelector('#submit').disabled = false;
+};
+
+
 (function(){
+
+	// custom select -----------------------------
 
 	var select = document.querySelector('select');
 	var options = select.options;
@@ -47,19 +56,97 @@
 			currentSelection.classList.add('active');
 		}
 	}
-	
+
 	currentSelection.addEventListener('click', toggleOptions);
-
 	document.addEventListener('click', function(e) {
-
 		if(e.target != currentSelection && list.classList.contains('active')) {
-			list.classList.remove('active');
-			currentSelection.classList.remove('active');
+			toggleOptions();
 		}
 	});
 
 
 
+	// form javascript -----------------------------
+
+
+	var body = document.querySelector('body');
+	var getStarted = document.querySelector('#getStarted');
+	var popup = document.querySelector('#popup');
+	var closeLightbox = document.querySelector('.close-lightbox');
+	var inputs = document.querySelectorAll('#signupForm .validation-one');
+	var submitButton = document.querySelector('#submit');
+
+	var password = document.querySelector('#password');
+	var confirmPassword = document.querySelector('#confirmPassword');
+
+	function openLightbox() {
+		body.classList.add('open-modal');
+		popup.classList.add('active');
+	}
+	
+	function closeLightbox() {
+		body.classList.remove('open-modal');
+		popup.classList.remove('active');
+	}
+
+	function matchingPasswords() {
+
+		if(password.value != confirmPassword.value) {
+			confirmPassword.setCustomValidity('Passwords do not match');
+			return false;
+		}
+		else {
+			confirmPassword.setCustomValidity('');
+			return true;
+		}
+	}
+
+
+	getStarted.addEventListener('click', function(e) {
+		e.preventDefault();
+		var formInvalid = false;
+		for (var i = 0; i < inputs.length; i++) {
+			if(inputs[i].checkValidity() == false) {
+				document.querySelector('#submit').click();
+				formInvalid = true;
+				break;
+			}
+		}
+		if(!formInvalid) {
+			openLightbox();
+			submitButton.disabled = true;
+			password.removeAttribute('novalidate');
+			password.removeAttribute('novalidate');
+
+			confirmPassword.required = true;
+			confirmPassword.required = true;
+		}
+
+	});
+
+
+	popup.addEventListener('click', function(e){
+		console.log(e);
+		if(e.target == popup) {
+			 closeLightbox();
+		}
+	});
+
+
+	closeLightbox.addEventListener('click', function(e) {
+		document.querySelector('body').classList.remove('open-modal');
+		popup.classList.remove('active');
+	});
+	submitButton.addEventListener('click', function(e) {
+		if(! matchingPasswords()) {
+			return false;
+		}
+	})
+
+
 
 
 })();
+
+
+

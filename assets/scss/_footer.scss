@@ -1,57 +1,65 @@
-footer.wrapper {
-	@include clear();
-	background: $black;
-	min-height: 35px;
-	padding: 20px;
-	margin-bottom: 0;
+body.refreshed-lp {
 
-	ul {
-		margin-bottom: 10px;
+	footer.wrapper {
+		@include clear();
+		background: $black;
+		min-height: 35px;
+		padding: 20px;
+		margin-bottom: 0;
 
-		li {
-			float: left;
-			margin: 5px auto;
-			//@media (max-width: $fablet) { width: 100%;}
-			a {
-				color: $white;
-				font-size: 14px;
-				font-weight: 400;
-				font-family: $headline-font;
-				padding: 10px 15px;
-				&:hover {
-					color: $sophosi-yellow;
+		ul {
+			margin-bottom: 10px;
+
+			li {
+				float: left;
+				margin: 5px auto;
+
+				a {
+					color: $white;
+					font-size: 14px;
+					font-weight: 400;
+					font-family: $headline-font;
+					padding: 10px 15px;
+					
+					&:hover {
+						color: $sophosi-yellow;
+					}
 				}
 			}
-		}
-		&.social-links {
-			float: right;
+
+			&.social-links {
+				float: right;
+
+				@media (max-width: $small-desktop) {
+					display: block;
+					width: 100%;
+					text-align: center;
+
+					li {
+						float: none;
+						display: inline-block;
+					}
+
+				}
+				margin-right: 10px;
+
+				img {
+					max-width: 18px;
+				}
+			}
+
 			@media (max-width: $small-desktop) {
 				display: block;
 				width: 100%;
 				text-align: center;
+				margin-top: 20px;
+
 				li {
 					float: none;
 					display: inline-block;
 				}
-
-			}
-			margin-right: 10px;
-
-			img {
-				max-width: 18px;
 			}
 		}
-
-		@media (max-width: $small-desktop) {
-				display: block;
-				width: 100%;
-				text-align: center;
-				margin-top: 20px;
-				li {
-					float: none;
-					display: inline-block;
-				}
-
-			}
 	}
+
 }

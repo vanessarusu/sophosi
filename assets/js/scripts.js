@@ -126,7 +126,6 @@ var enableBtn = function() {
 
 
 	popup.addEventListener('click', function(e){
-		console.log(e);
 		if(e.target == popup) {
 			 closeLightbox();
 		}

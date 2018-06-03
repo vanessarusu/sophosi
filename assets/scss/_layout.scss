@@ -1,5 +1,6 @@
 $small-desktop: 1024px;
 $tablet: 768px;
+$below-tablet: 767px;
 $fablet: 600px;
 $mobile: 400px;
 
@@ -9,19 +10,19 @@ $mobile: 400px;
 
 $whitespace-border: 20px;
 
-body {
+body.refreshed-lp {
 	background: $light-grey;
-}
 
-.wrapper {
-	background: $white;
-	box-shadow: 1px 1px 10px rgba($black, 0.1);
-	max-width: 1400px;
-	padding: $whitespace-border;
-	margin: 0 auto 20px;
-}
+	.wrapper {
+		background: $white;
+		box-shadow: 1px 1px 10px rgba($black, 0.1);
+		max-width: 1400px;
+		padding: $whitespace-border;
+		margin: 0 auto 20px;
+	}
 
-.section-padding {
-	padding: 145px 80px;
-	@media (max-width: $fablet) { padding: 80px 40px; }
+	.section-padding {
+		padding: 145px 80px;
+		@media (max-width: $fablet) { padding: 80px 40px; }
+	}
 }

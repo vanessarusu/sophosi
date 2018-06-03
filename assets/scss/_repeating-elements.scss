@@ -21,6 +21,14 @@
 			background: darken($background, 10%);
 		}
 	}
+	&:disabled, [disabled] {
+		background: $light-grey;
+		color: lighten($black, 40%);
+		cursor: auto;
+		&:hover {
+			background: $light-grey;
+		}
+	}
 }
 
 @mixin underlineHover() {

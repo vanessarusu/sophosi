@@ -23,21 +23,25 @@ body.refreshed-lp {
 
 		.left {
 			float: left;
-			width: 45%;
-			@media (max-width: $fablet) { width: 100%; }
+			width: 40%;
+			@media (max-width: $tablet) { width: 100%; }
 		}
 
 		.right {
 			float: right;
-			width: 54%;
-			@media (max-width: $fablet) { width: 100%; }
+			width: 58%;
+			@media (max-width: $tablet) { width: 100%; }
 			margin-right: -10px;
 			margin-top: -60px;
-			@media (max-width: $fablet) { margin: 0px auto 30px; }
+			@media (max-width: $tablet) { margin: 0px auto 30px; }
 
 			img {
 				max-width: 110%;
-				@media (max-width: $fablet) { max-width: 100%; }
+				margin-top: 70px;
+				@media (max-width: $tablet) { 
+					max-width: 100%; 
+					margin-top: 0;
+				}
 			}
 		}
 
@@ -71,7 +75,7 @@ body.refreshed-lp {
 			}
 
 			p {
-				max-width: 300px;
+				max-width: 375px;
 				padding-top: 22px;
 				font-size: 24px;
 
@@ -102,16 +106,20 @@ body.refreshed-lp {
 body.refreshed-lp.administrator {
 
 	#getStartedPanel {
+
 		[class^="step-"] {
 			span {
 				color: $sophosi-yellow;
 			}
 		}
+
 		.step-three span {
 			height: 220px;
-			@media (max-width: $small-desktop) { height: 115px; }
+			@media (max-width: $small-desktop) { height: 140px; }
+			@media (max-width: $tablet) { height: 75px; }
 			@media (max-width: $fablet) { height: unset; }
 		}
+
 		.button {
 			@include button(14px, $sophosi-red);
 			color: $white;

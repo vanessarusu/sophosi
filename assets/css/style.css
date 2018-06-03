@@ -93,7 +93,7 @@ body.refreshed-lp {
   @media (max-width: 600px) {
     body.refreshed-lp {
       font-size: 14px; } }
-  body.refreshed-lp::selection {
+  body.refreshed-lp ::selection {
     background: #fcb315;
     color: #1d1e26; }
   body.refreshed-lp h1,
@@ -329,6 +329,30 @@ body.refreshed-lp #popup {
 body.refreshed-lp .g-recaptcha > div {
   margin: 10px auto; }
 
+body.administrator.refreshed-lp form button, body.administrator.refreshed-lp form .button {
+  padding: 15px 15px 12px;
+  font-size: 22px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 600;
+  background: #e63f43;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #1d1e26;
+  min-width: 250px;
+  text-align: center;
+  color: #1d1e26;
+  color: #fff; }
+  @media (min-width: 768px) {
+    body.administrator.refreshed-lp form button:hover, body.administrator.refreshed-lp form .button:hover {
+      transition: background 0.2s ease-in-out;
+      background: #d61c20; } }
+  body.administrator.refreshed-lp form button:disabled, body.administrator.refreshed-lp form button [disabled], body.administrator.refreshed-lp form .button:disabled, body.administrator.refreshed-lp form .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    body.administrator.refreshed-lp form button:disabled:hover, body.administrator.refreshed-lp form button [disabled]:hover, body.administrator.refreshed-lp form .button:disabled:hover, body.administrator.refreshed-lp form .button [disabled]:hover {
+      background: #f0f0f0; }
+
 body.refreshed-lp #intro header:after {
   clear: both;
   display: block;
@@ -555,6 +579,197 @@ body.refreshed-lp .alternate-offering {
           body.refreshed-lp .alternate-offering div div .button:disabled:hover, body.refreshed-lp .alternate-offering div div .button [disabled]:hover {
             background: #f0f0f0; }
 
+body.refreshed-lp.administrator #intro #hero {
+  background: url(../../img/sophosi-admin-hero-bg.jpg) center top no-repeat; }
+  body.refreshed-lp.administrator #intro #hero:after {
+    background: -moz-linear-gradient(top, rgba(26, 26, 26, 0) 12%, rgba(26, 26, 26, 0.7) 55%, rgba(26, 26, 26, 0.95) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(26, 26, 26, 0) 12%, rgba(26, 26, 26, 0.7) 55%, rgba(26, 26, 26, 0.95) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0) 12%, rgba(26, 26, 26, 0.7) 55%, rgba(26, 26, 26, 0.95) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a1a1a', endColorstr='#1a1a1a',GradientType=0 );
+    /* IE6-9 */ }
+
+body.refreshed-lp.administrator #intro header .button {
+  padding: 15px 15px 12px;
+  font-size: 14px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 600;
+  background: #fcb315;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #1d1e26;
+  min-width: 250px;
+  text-align: center;
+  color: #1d1e26;
+  color: #1d1e26;
+  display: block;
+  text-align: center;
+  padding: 12px;
+  margin-top: 15px; }
+  @media (min-width: 768px) {
+    body.refreshed-lp.administrator #intro header .button:hover {
+      transition: background 0.2s ease-in-out;
+      background: #db9703; } }
+  body.refreshed-lp.administrator #intro header .button:disabled, body.refreshed-lp.administrator #intro header .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    body.refreshed-lp.administrator #intro header .button:disabled:hover, body.refreshed-lp.administrator #intro header .button [disabled]:hover {
+      background: #f0f0f0; }
+  @media (max-width: 600px) {
+    body.refreshed-lp.administrator #intro header .button {
+      margin-bottom: 20px; } }
+
+body.refreshed-lp.administrator .stats {
+  text-align: left;
+  margin-bottom: 90px; }
+  body.refreshed-lp.administrator .stats:after {
+    clear: both;
+    display: block;
+    content: '';
+    float: none; }
+  @media (max-width: 600px) {
+    body.refreshed-lp.administrator .stats {
+      text-align: center; } }
+  body.refreshed-lp.administrator .stats .third {
+    width: 33%;
+    float: left; }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .stats .third {
+        width: 100%; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .stats .third {
+        float: none; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .stats .third:nth-child(2) {
+        margin: 40px auto; } }
+    body.refreshed-lp.administrator .stats .third .container {
+      max-width: 300px;
+      width: 90%;
+      margin: 0 auto; }
+  body.refreshed-lp.administrator .stats .title {
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 58px;
+    font-weight: bold;
+    line-height: 59px; }
+    @media (max-width: 1024px) {
+      body.refreshed-lp.administrator .stats .title {
+        font-size: 40px; } }
+    @media (max-width: 767px) {
+      body.refreshed-lp.administrator .stats .title {
+        font-size: 30px; } }
+    @media (max-width: 1024px) {
+      body.refreshed-lp.administrator .stats .title {
+        line-height: 1.1; } }
+  body.refreshed-lp.administrator .stats .yellow-border {
+    border-left: 4px solid #fcb315;
+    padding-left: 30px;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-weight: 600; }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .stats .yellow-border {
+        border-left: none; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .stats .yellow-border {
+        padding-left: 10px; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .stats .yellow-border {
+        padding-left: 0; } }
+    body.refreshed-lp.administrator .stats .yellow-border p {
+      font-size: 19px;
+      line-height: 1.3; }
+      @media (max-width: 1024px) {
+        body.refreshed-lp.administrator .stats .yellow-border p {
+          font-size: 16px; } }
+      @media (max-width: 767px) {
+        body.refreshed-lp.administrator .stats .yellow-border p {
+          font-size: 14px; } }
+
+body.refreshed-lp.administrator .quote > p:first-of-type {
+  position: relative;
+  padding-top: 40px;
+  font-size: 28px;
+  line-height: 50px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: bold;
+  max-width: 1100px; }
+  body.refreshed-lp.administrator .quote > p:first-of-type:after {
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 78px;
+    height: 4px;
+    background: #e63f43; }
+  @media (max-width: 1024px) {
+    body.refreshed-lp.administrator .quote > p:first-of-type {
+      font-size: 20px; } }
+  @media (max-width: 600px) {
+    body.refreshed-lp.administrator .quote > p:first-of-type {
+      font-size: 16px; } }
+  @media (max-width: 1024px) {
+    body.refreshed-lp.administrator .quote > p:first-of-type {
+      line-height: 36px; } }
+  @media (max-width: 600px) {
+    body.refreshed-lp.administrator .quote > p:first-of-type {
+      line-height: 26px; } }
+
+body.refreshed-lp.administrator .quote > p:not(:first-of-type) {
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5; }
+  @media (max-width: 1024px) {
+    body.refreshed-lp.administrator .quote > p:not(:first-of-type) {
+      font-size: 12px; } }
+
+body.refreshed-lp.administrator .quote .dual-copy {
+  margin-top: 65px;
+  text-align: left; }
+  body.refreshed-lp.administrator .quote .dual-copy:after {
+    clear: both;
+    display: block;
+    content: '';
+    float: none; }
+  body.refreshed-lp.administrator .quote .dual-copy p {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 0; }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        width: 80%; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        width: 100%; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        float: none; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        margin-left: auto; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        font-size: 16px; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp.administrator .quote .dual-copy p {
+        font-size: 14px; } }
+  body.refreshed-lp.administrator .quote .dual-copy p:last-of-type {
+    float: right;
+    margin-right: 5%; }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p:last-of-type {
+        float: none; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp.administrator .quote .dual-copy p:last-of-type {
+        margin-right: auto; } }
+
 body.refreshed-lp #qualifications {
   background: url(../../img/chalkboard-bg.jpg) center center no-repeat;
   background-size: cover;
@@ -719,6 +934,9 @@ body.refreshed-lp #getStartedPanel [class^="step-"] {
     @media (max-width: 1024px) {
       body.refreshed-lp #getStartedPanel [class^="step-"] span {
         font-size: 50px; } }
+    @media (max-width: 768px) {
+      body.refreshed-lp #getStartedPanel [class^="step-"] span {
+        height: 75px; } }
     @media (max-width: 1024px) {
       body.refreshed-lp #getStartedPanel [class^="step-"] span {
         margin-right: 10px; } }
@@ -730,20 +948,21 @@ body.refreshed-lp #getStartedPanel [class^="step-"] {
         body.refreshed-lp #getStartedPanel [class^="step-"] span:not(:first-of-type) {
           margin-top: 20px; } }
   body.refreshed-lp #getStartedPanel [class^="step-"] p {
+    max-width: 300px;
     padding-top: 22px;
     font-size: 24px; }
     @media (max-width: 1024px) {
       body.refreshed-lp #getStartedPanel [class^="step-"] p {
-        padding-top: 15px; } }
-    @media (max-width: 768px) {
-      body.refreshed-lp #getStartedPanel [class^="step-"] p {
-        font-size: 16px; } }
-    @media (max-width: 1024px) {
-      body.refreshed-lp #getStartedPanel [class^="step-"] p {
+        padding-top: 15px;
         font-size: 18px; } }
     @media (max-width: 768px) {
       body.refreshed-lp #getStartedPanel [class^="step-"] p {
-        font-size: 14px; } }
+        font-size: 14px;
+        padding-bottom: 20px; } }
+    @media (max-width: 600px) {
+      body.refreshed-lp #getStartedPanel [class^="step-"] p {
+        margin: 0 auto;
+        max-width: 200px; } }
 
 body.refreshed-lp #getStartedPanel .button {
   padding: 15px 15px 12px;
@@ -767,6 +986,42 @@ body.refreshed-lp #getStartedPanel .button {
     color: #777b98;
     cursor: auto; }
     body.refreshed-lp #getStartedPanel .button:disabled:hover, body.refreshed-lp #getStartedPanel .button [disabled]:hover {
+      background: #f0f0f0; }
+
+body.refreshed-lp.administrator #getStartedPanel [class^="step-"] span {
+  color: #fcb315; }
+
+body.refreshed-lp.administrator #getStartedPanel .step-three span {
+  height: 220px; }
+  @media (max-width: 1024px) {
+    body.refreshed-lp.administrator #getStartedPanel .step-three span {
+      height: 115px; } }
+  @media (max-width: 600px) {
+    body.refreshed-lp.administrator #getStartedPanel .step-three span {
+      height: unset; } }
+
+body.refreshed-lp.administrator #getStartedPanel .button {
+  padding: 15px 15px 12px;
+  font-size: 14px;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-weight: 600;
+  background: #e63f43;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #1d1e26;
+  min-width: 250px;
+  text-align: center;
+  color: #1d1e26;
+  color: #fff; }
+  @media (min-width: 768px) {
+    body.refreshed-lp.administrator #getStartedPanel .button:hover {
+      transition: background 0.2s ease-in-out;
+      background: #d61c20; } }
+  body.refreshed-lp.administrator #getStartedPanel .button:disabled, body.refreshed-lp.administrator #getStartedPanel .button [disabled] {
+    background: #f0f0f0;
+    color: #777b98;
+    cursor: auto; }
+    body.refreshed-lp.administrator #getStartedPanel .button:disabled:hover, body.refreshed-lp.administrator #getStartedPanel .button [disabled]:hover {
       background: #f0f0f0; }
 
 body.refreshed-lp footer.wrapper {

@@ -55,6 +55,7 @@ body.refreshed-lp {
 				float: left;
 				width: 50px;
 				height: 100px;
+				@media (max-width: $tablet) { height: 75px; }
 				text-align: center;
 				margin-right: 30px;
 				@media (max-width: $small-desktop) { margin-right: 10px; }
@@ -70,18 +71,50 @@ body.refreshed-lp {
 			}
 
 			p {
+				max-width: 300px;
 				padding-top: 22px;
-				@media (max-width: $small-desktop) { padding-top: 15px; }
-				@media (max-width: $tablet) { font-size: 16px; }
 				font-size: 24px;
-				@media (max-width: $small-desktop) { font-size: 18px; }
-				@media (max-width: $tablet) { font-size: 14px; }
+
+				@media (max-width: $small-desktop) {
+					padding-top: 15px;
+					font-size: 18px;
+				}
+				@media (max-width: $tablet) { 
+					font-size: 14px;
+					padding-bottom: 20px;
+				}
+				@media (max-width: $fablet) {
+					margin: 0 auto;
+					max-width: 200px;
+				}
 			}
 		}
-		
+
 		.button {
 			 @include button();
 			 margin-top: 60px;
+		}
+	}
+}
+
+// administrator specific styling
+
+body.refreshed-lp.administrator {
+
+	#getStartedPanel {
+		[class^="step-"] {
+			span {
+				color: $sophosi-yellow;
+			}
+		}
+		.step-three span {
+			height: 220px;
+			@media (max-width: $small-desktop) { height: 115px; }
+			@media (max-width: $fablet) { height: unset; }
+		}
+		.button {
+			@include button(14px, $sophosi-red);
+			color: $white;
 		}
 	}
 }

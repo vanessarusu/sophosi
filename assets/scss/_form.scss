@@ -1,5 +1,5 @@
-body.refreshed-lp{
-	
+body.refreshed-lp {
+
 	form {
 
 		select {
@@ -190,5 +190,16 @@ body.refreshed-lp{
 	.g-recaptcha > div {
 		margin: 10px auto;
 	}
+}
 
+// administrator specific styling
+body.administrator.refreshed-lp {
+
+	form {
+
+		button, .button {
+			@include button(22px, $sophosi-red);
+			color: $white;
+		}
+	}
 }

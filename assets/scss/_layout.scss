@@ -1,5 +1,6 @@
 $small-desktop: 1024px;
 $tablet: 768px;
+$below-tablet: 767px;
 $fablet: 600px;
 $mobile: 400px;
 
@@ -11,7 +12,7 @@ $whitespace-border: 20px;
 
 body.refreshed-lp {
 	background: $light-grey;
-	
+
 	.wrapper {
 		background: $white;
 		box-shadow: 1px 1px 10px rgba($black, 0.1);

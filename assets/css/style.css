@@ -580,7 +580,8 @@ body.refreshed-lp .alternate-offering {
             background: #f0f0f0; }
 
 body.refreshed-lp.administrator #intro #hero {
-  background: url(../../img/sophosi-admin-hero-bg.jpg) center top no-repeat; }
+  background: url(../../img/sophosi-admin-hero-bg.jpg) center top no-repeat;
+  background-size: cover; }
   body.refreshed-lp.administrator #intro #hero:after {
     background: -moz-linear-gradient(top, rgba(26, 26, 26, 0) 12%, rgba(26, 26, 26, 0.7) 55%, rgba(26, 26, 26, 0.95) 100%);
     /* FF3.6-15 */

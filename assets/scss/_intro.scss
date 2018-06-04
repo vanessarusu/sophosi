@@ -176,6 +176,7 @@ body.refreshed-lp.administrator {
 
 		#hero {
 			background: url(../../img/sophosi-admin-hero-bg.jpg) center top no-repeat;
+			background-size: cover;
 
 			&:after {
 				background: -moz-linear-gradient(top, rgba(26,26,26,0) 12%, rgba(26,26,26,0.7) 55%, rgba(26,26,26,0.95) 100%); /* FF3.6-15 */
